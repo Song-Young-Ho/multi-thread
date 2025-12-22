@@ -1,0 +1,27 @@
+package thread.control;
+
+import thread.start.HelloRunnable;
+
+import static util.MyLogger.log;
+
+public class ThreadInfoMain {
+    public static void main(String[] args) {
+        Thread mainThread = Thread.currentThread();
+
+        log("mainThread = " + mainThread);
+        log("mainThread.threadId = " + mainThread.getId());
+        log("mainThread.threadName = " + mainThread.getName());
+        log("mainThread.getPriority = " + mainThread.getPriority());
+        log("mainThread.getThreadGroup = " + mainThread.getThreadGroup());
+        log("mainThread.getState = " + mainThread.getState());
+
+        Thread myThread = new Thread(new HelloRunnable());
+
+        log("myThread = " + myThread);
+        log("myThread.threadId = " + myThread.getId());
+        log("myThread.threadName = " + myThread.getName());
+        log("myThread.getPriority = " + myThread.getPriority());
+        log("myThread.getThreadGroup = " + myThread.getThreadGroup());
+        log("myThread.getState = " + myThread.getState());
+    }
+}
